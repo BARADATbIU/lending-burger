@@ -3,6 +3,7 @@
 import gulp from "gulp";
 import del from "del";
 import gulpif from "gulp-if";
+import ghPages from "gulp-gh-pages";
 
 import sass from "gulp-sass";
 import postcss from "gulp-postcss";
