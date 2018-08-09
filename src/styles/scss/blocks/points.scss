@@ -1,0 +1,49 @@
+.nav-points {
+  position: fixed;
+  top: 90px;
+  right: 40px;
+  z-index: 99;
+  @include tablets {
+    display: none;
+  }
+  &__item {
+    margin-bottom: 5px;
+  }
+  &__link {
+    @include size(1rem, 1rem);
+    display: block;
+    position: relative;
+    &::after,
+    &::before {
+      content: "";
+      @include centered();
+      border-radius: 50%;
+    }
+    &::after {
+      @include size(6px, 6px);
+      background-color: $white;
+    }
+    &::before {
+      @include size(0, 0);
+      border: 1px solid $white;
+      opacity: 0;
+      transition: 0.2s;
+    }
+    &:hover {
+      &::before {
+        @include size(14Px, 14Px);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.nav-points__item {
+  &.is-active {
+    .nav-points__link {
+      &::before {
+        @extend .nav-points__link:hover::before;
+      }
+    }
+  }
+}

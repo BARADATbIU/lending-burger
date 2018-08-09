@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  &__menu {
+    margin-left: auto;
+  }
+  &__buttons {
+    display: flex;
+    margin-left: 15px;
+    @include tablets {
+      margin-right: 62px;
+    }
+  }
+}

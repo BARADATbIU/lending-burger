@@ -1,0 +1,31 @@
+.modal__close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20Px;
+  height: 20Px;
+  z-index: 999;
+  &--ingred {
+    display: none;
+    @include tablets {
+      display: block;
+    }
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 8Px;
+    width: 20Px;
+    height: 4px;
+    background-color: $orange;
+    border-radius: 4px;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}

@@ -1,0 +1,37 @@
+.slider {
+  position: relative;
+  display: flex;
+
+  &__frame {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__list {
+    display: flex;
+    position: relative;
+    @include size;
+    left: -100%;
+    transform: translateX(-100%);
+
+    &.is-reverse {
+      transform: translateX(100%);
+    }
+
+    &.is-move {
+      transform: none;
+      transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  }
+
+  &__item {
+    display: flex;
+    @include size;
+    flex: 1 0 100%;
+    order: 2;
+
+    &.is-one {
+      order: 1;
+    }
+  }
+}

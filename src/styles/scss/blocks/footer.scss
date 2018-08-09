@@ -1,0 +1,68 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-image: url('../images/bg/footer-bg.jpg');
+  @include cover;
+  padding: 7px 0;
+  @include phones {
+    padding: 1rem 0;
+  }
+  &__col {
+    display: flex;
+    @include phones {
+      align-items: center;
+    }
+  }
+  &__contacts {
+    flex-direction: column;
+    font-size: 14px;
+    @include phones {
+      margin-bottom: 1rem;
+    }
+  }
+  &__adress {
+    color: $white;
+    font-weight: $lightFont;
+    margin-bottom: 5px;
+  }
+  &__phone {
+    display: flex;
+    align-items: center;
+    font-weight: $boldFont;
+    color: $orange;
+    &::before {
+      content: '';
+      margin-right: 7px;
+      @include size(13px, 13px);
+      background-image: url('../images/svgicons/phone.svg');
+      @include cover;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-end;
+  &__item {
+    margin-left: 19px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    display: flex;
+    &:hover {
+      .socials__svg {
+        opacity: 1;
+      }
+    }
+  }
+  &__svg {
+    @include size(21px,
+    21px);
+    fill: white;
+    opacity: .3;
+    transition: .4s;
+  }
+}

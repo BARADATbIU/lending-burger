@@ -1,0 +1,66 @@
+.menu {
+  background-image: url('../images/bg/menu-bg.jpg');
+  @include cover;
+  position: relative;
+  justify-content: flex-end;
+  &__accordion {
+    display: flex;
+    z-index: 1;
+    @include phones {
+      transition: transform .8s;
+    }
+  }
+  &__item {
+    display: flex;
+  }
+  &__link {
+    @include cover;
+    display: flex;
+    align-items: flex-end;
+    width: 5rem;
+    @include tablets {
+      width: 4rem;
+    }
+  }
+  &__title {
+    @include gagalin;
+    font-size: 2.5rem;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 5rem;
+    @include tablets {
+      font-size: 2rem;
+    }
+  }
+  &__content {
+    overflow: hidden;
+    width: 0;
+    background-color: rgba($grey, .93);
+    transition: width .8s;
+  }
+  &__text {
+    color: $white;
+    font-size: 14px;
+    font-weight: $lightFont;
+    line-height: 1.8;
+    padding: 4rem 2rem;
+    opacity: 0;
+  }
+}
+
+.menu__item {
+  &.is-active {
+    .menu__title {
+      color: $yellow;
+    }
+    .menu__content {
+      width: 540px;
+    }
+    .menu__text {
+      opacity: 1;
+      transition: opacity .3s;
+      transition-delay: .7s;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.scroll-btn {
+  padding: .5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &--next,
+  &--prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    padding: 5rem 1rem;
+  }
+
+  &--next {
+    right: -2rem;
+  }
+
+  &--prev {
+    left: -2rem;
+  }
+}
+
+.arrow-scroll {
+  width: 2rem;
+  height: 1rem;
+  fill: white;
+
+  &--left {
+    transform: rotate(90deg);
+  }
+
+  &--right {
+    transform: rotate(-90deg);
+  }
+}

@@ -1,0 +1,36 @@
+.btn {
+  font-size: 13px;
+  color: $white;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+  background-color: $orange;
+  &:hover {
+    background-color: darken($orange, 7%);
+  }
+}
+
+.btn--review {
+  background-color: $grey;
+  align-self: flex-start;
+  @include tablets {
+    align-self: center;
+    transform: translateY(200%);
+  }
+  @include phones {
+    display: none;
+  }
+  &:hover {
+    background-color: darken($grey, 7%);
+  }
+  &-phones {
+    display: none;
+    @include phones {
+      display: block;
+    }
+  }
+}
