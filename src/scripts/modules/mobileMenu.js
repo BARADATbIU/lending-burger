@@ -7,9 +7,7 @@ function mobileMenu() {
   trigger.addEventListener("click", toggleClass);
 
   for (const iterator of navItems) {
-    iterator.addEventListener("click", e => {
-      toggleClass(e);
-    });
+    iterator.addEventListener("click", toggleClass);
   }
   function toggleClass(e) {
     e.preventDefault();
