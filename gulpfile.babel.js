@@ -57,6 +57,7 @@ const paths = {
   },
   scripts: {
     src: "src/scripts/main.js",
+    watch: "src/scripts/**/*.js",
     dest: "dist/scripts/"
   },
   scriptsLibs: {
@@ -211,7 +212,7 @@ function watch() {
   gulp.watch(paths.html.src, gulp.series(html, reload));
   gulp.watch(paths.fonts.src, gulp.series(fonts, reload));
   gulp.watch(paths.styles.watch, gulp.series(styles, reload));
-  gulp.watch(paths.scripts.src, gulp.series(scripts, reload));
+  gulp.watch(paths.scripts.watch, gulp.series(scripts, reload));
   gulp.watch(paths.images.src, gulp.series(images, reload));
   gulp.watch(paths.svgSprite.src, gulp.series(svgSprite, reload));
 }

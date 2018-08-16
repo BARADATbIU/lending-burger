@@ -37,7 +37,7 @@
       <td><code>npm run build</code></td>
       <td>Сборка проекта без карт кода (сжатый вид, как результат работы)</td>
     </tr>
-        <tr>
+    <tr>
       <td><code>npm run deploy</code></td>
       <td>Деплой всего содержимого папки `dist` в ветку `gh-pages`</td>
     </tr>
