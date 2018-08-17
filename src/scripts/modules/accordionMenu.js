@@ -1,8 +1,8 @@
 function accordionMenu() {
-  const menuItems = document.querySelectorAll(".menu__item");
-  const menuAccord = document.querySelector(".menu__accordion");
+  const menuItems = document.querySelectorAll('.menu__item');
+  const menuAccord = document.querySelector('.menu__accordion');
 
-  menuAccord.addEventListener("click", event => {
+  menuAccord.addEventListener('click', event => {
     let target = event.target.parentNode;
     let content = target.nextElementSibling;
     let item = target.parentNode;
@@ -14,7 +14,7 @@ function accordionMenu() {
     const closeMenuWidth = tarWidth * menuItems.length;
     const openMenuWidth = closeMenuWidth + layoutContentWidth;
 
-    if (event.target.classList.contains("menu__title")) {
+    if (event.target.classList.contains('menu__title')) {
       moveMenu();
     }
 
@@ -22,39 +22,40 @@ function accordionMenu() {
     content = target.nextElementSibling;
     item = target.parentNode;
 
-    if (target.classList.contains("menu__link")) {
+    if (target.classList.contains('menu__link')) {
       moveMenu();
     }
 
     function moveMenu() {
       for (const iterator of menuItems) {
         if (iterator != item) {
-          iterator.classList.remove("is-active");
+          iterator.classList.remove('is-active');
           iterator.lastElementChild.style.width = 0;
+          menuAccord.style.transform = `translateX(0)`;
         }
       }
 
-      if (item.classList.contains("is-active")) {
-        item.classList.remove("is-active");
+      if (item.classList.contains('is-active')) {
+        item.classList.remove('is-active');
         content.style.width = 0;
-        menuAccord.style.transform = `translateX(0)`;
       } else {
-        item.classList.add("is-active");
+        item.classList.add('is-active');
 
         if (windowWidth > breakpointPhone && windowWidth < openMenuWidth) {
-          content.style.width = windowWidth - closeMenuWidth + "px";
+          content.style.width = windowWidth - closeMenuWidth + 'px';
         } else if (windowWidth <= breakpointPhone) {
           let num;
 
           for (let i = 0; i < menuItems.length; i++) {
-            if (menuItems[i] == item) {
+            if (menuItems[i] === item) {
               num = menuItems.length - (i + 1);
             }
           }
+
           menuAccord.style.transform = `translateX(${tarWidth * num}px)`;
-          content.style.width = windowWidth - tarWidth + "px";
+          content.style.width = windowWidth - tarWidth + 'px';
         } else {
-          content.style.width = layoutContentWidth + "px";
+          content.style.width = 520 + 'px';
         }
       }
     }

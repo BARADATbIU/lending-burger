@@ -1,5 +1,4 @@
 function mySlider() {
-    
   const next = document.querySelector('.scroll-btn--next');
   const prev = document.querySelector('.scroll-btn--prev');
   const list = document.querySelector('.slider__list');
@@ -9,9 +8,8 @@ function mySlider() {
   prev.addEventListener('click', movePrev);
 
   let num = 2;
-  
-  function moveNext() {
 
+  function moveNext() {
     num++;
     if (num > items.length) num = 1;
 
@@ -21,13 +19,12 @@ function mySlider() {
   }
 
   function movePrev() {
-
     num--;
     if (num === 0) num = items.length;
-    
+
     setOrder();
     list.classList.add('is-reverse');
-    moveItem();    
+    moveItem();
   }
 
   function setOrder() {
@@ -45,7 +42,7 @@ function mySlider() {
 
     setTimeout(() => {
       list.classList.add('is-move');
-    }, 50);    
+    }, 50);
   }
 }
 
